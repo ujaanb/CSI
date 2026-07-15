@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tiredness — Key Concepts to Remember (Phase 1B CSI)</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --ink: #1c2733;
+    --muted: #5a6b7b;
+    --accent: #0b6e8f;
+    --accent-soft: #e3f1f6;
+    --line: #dde5ec;
+    --warn-bg: #fff6e5;
+    --warn-line: #f0c674;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header {
+    background: linear-gradient(135deg, #0b6e8f, #0a4b63);
+    color: #fff;
+    padding: 2.4rem 1.5rem 1.8rem;
+  }
+  header .wrap { max-width: 900px; margin: 0 auto; }
+  header .kicker {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .72rem;
+    opacity: .85;
+    margin: 0 0 .4rem;
+  }
+  header h1 { margin: 0; font-size: 1.9rem; }
+  header p { margin: .6rem 0 0; opacity: .9; max-width: 60ch; }
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.1rem 0;
+    box-shadow: 0 1px 3px rgba(16,42,67,.05);
+  }
+  .card h2 {
+    margin: 0 0 .8rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .card h2 .num {
+    display: inline-grid;
+    place-items: center;
+    width: 1.7rem; height: 1.7rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 50%;
+    font-size: .9rem;
+    font-weight: 700;
+    flex: none;
+  }
+  h3 { margin: 1rem 0 .4rem; font-size: 1rem; }
+  ul { margin: .3rem 0 .3rem; padding-left: 1.25rem; }
+  li { margin: .25rem 0; }
+  .pill {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: .15rem .6rem;
+    font-size: .78rem;
+    font-weight: 600;
+    margin: 0 .3rem .3rem 0;
+  }
+  table { border-collapse: collapse; width: 100%; margin: .6rem 0; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent); }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin-top: .4rem; }
+  .stat {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: .8rem 1rem;
+  }
+  .stat .big { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+  .stat .lbl { font-size: .82rem; color: var(--muted); }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin: .5rem 0; }
+  .flow .step {
+    background: var(--accent-soft);
+    border: 1px solid #bfe0ea;
+    border-radius: 8px;
+    padding: .35rem .65rem;
+    font-size: .88rem;
+    font-weight: 600;
+  }
+  .flow .arrow { color: var(--accent); font-weight: 700; }
+  .warn {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    font-size: .9rem;
+  }
+  .warn strong { color: #8a5a00; }
+  .cols { columns: 2; column-gap: 1.6rem; }
+  @media (max-width: 560px) { .cols { columns: 1; } }
+  footer { max-width: 900px; margin: 0 auto; padding: 1rem 1.5rem 3rem; color: var(--muted); font-size: .82rem; }
+  code { background: #eef2f6; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">Phase 1B CSI · Case 1 revision</p>
+    <h1>Tiredness — Key Concepts to Remember</h1>
+    <p>A compact revision summary of the Mina Shahnawaz tiredness case: the clinical framing of fatigue through to thyroid endocrinology and autoimmune thyroiditis.</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2><span class="num">1</span> Tiredness vs fatigue</h2>
+    <ul>
+      <li><strong>Tiredness</strong> — a general symptom almost everyone experiences.</li>
+      <li><strong>Fatigue</strong> — the long-term effect of tiredness <em>not</em> resolved by sleep.</li>
+    </ul>
+    <h3>Fatigue in primary care — numbers to know</h3>
+    <div class="stat-grid">
+      <div class="stat"><div class="big">~7%</div><div class="lbl">of all GP consultations are due to fatigue</div></div>
+      <div class="stat"><div class="big">~66%</div><div class="lbl">of fatigue presentations get a diagnosis</div></div>
+      <div class="stat"><div class="big">&lt;10%</div><div class="lbl">have a cause detected on blood tests</div></div>
+    </div>
+    <p style="margin-top:.7rem"><strong>Takeaway:</strong> history (frequency &amp; severity, system review) matters more than early bloods — most causes are not found on blood tests.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span> Differential diagnosis of fatigue</h2>
+    <p>Ask about <strong>frequency and severity</strong>, use system-review questions, and order targeted tests (e.g. bloods) to rule conditions in/out.</p>
+    <h3>Candidate causes</h3>
+    <div class="cols">
+      <ul>
+        <li>Anaemia (incl. iron deficiency)</li>
+        <li>Sleep apnoea</li>
+        <li>Hypothyroidism</li>
+        <li>Coeliac disease</li>
+        <li>Chronic fatigue syndrome (ME/CFS)</li>
+        <li>Diabetes</li>
+        <li>Glandular fever</li>
+        <li>Depression</li>
+        <li>Restless legs syndrome</li>
+        <li>Anxiety</li>
+        <li>Malignancy</li>
+        <li>Vitamin D deficiency</li>
+        <li>Heart failure</li>
+        <li>Infection</li>
+        <li>Lupus</li>
+      </ul>
+    </div>
+    <h3>Non-pathological contributors</h3>
+    <p>
+      <span class="pill">Poor / insufficient sleep</span>
+      <span class="pill">Unhealthy lifestyle</span>
+      <span class="pill">Stress &amp; life events</span>
+      <span class="pill">Hormonal changes</span>
+      <span class="pill">Illness (e.g. COVID-19)</span>
+      <span class="pill">Treatments (e.g. chemo)</span>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">3</span> HPT axis &amp; primary hypothyroidism</h2>
+    <h3>Normal feedback loop</h3>
+    <div class="flow">
+      <span class="step">Hypothalamus → TRH</span><span class="arrow">→</span>
+      <span class="step">Anterior pituitary → TSH</span><span class="arrow">→</span>
+      <span class="step">Thyroid → T3 / T4</span>
+    </div>
+    <p>T3 and T4 feed back on the pituitary and hypothalamus to <strong>switch off</strong> further TRH/TSH (negative feedback).</p>
+    <h3>Why primary hypothyroidism = high TSH, low T3/T4</h3>
+    <ul>
+      <li>The thyroid can't make enough T3/T4.</li>
+      <li>Low T3/T4 means the negative feedback signal is lost.</li>
+      <li>So the pituitary keeps pumping out TSH → <strong>TSH rises</strong> while <strong>T3/T4 stay low</strong>.</li>
+    </ul>
+    <p style="margin:.4rem 0 0"><em>Contrast:</em> a pituitary/hypothalamic (central) cause would give low TSH with low T3/T4. <span class="pill">not in source — background</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span> Hashimoto's disease (autoimmune thyroiditis)</h2>
+    <p>The immune system recognises <strong>thyroid peroxidase (TPO)</strong> as foreign and produces <strong>anti-TPO antibodies</strong> that attack the thyroid. (TPO normally makes MIT &amp; DIT to build T3/T4.)</p>
+    <h3>Immune sequence</h3>
+    <div class="flow">
+      <span class="step">APC presents TPO on MHC II</span><span class="arrow">→</span>
+      <span class="step">TCR on T cell binds</span><span class="arrow">→</span>
+      <span class="step">CD28–B7 co-stimulation activates T cell</span><span class="arrow">→</span>
+      <span class="step">T cell CD40L → CD40 on B cell</span><span class="arrow">→</span>
+      <span class="step">B cell makes anti-TPO antibody</span>
+    </div>
+    <p><strong>Result:</strong> autoimmune destruction of the thyroid → hypothyroidism. (B cells can also act as APCs.)</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">5</span> Immune tolerance (Phase 1A recap)</h2>
+    <table>
+      <tr><th>Central tolerance</th><th>Peripheral tolerance</th></tr>
+      <tr>
+        <td>Before B/T cells enter circulation.
+          <ul>
+            <li><strong>B cells:</strong> self-reactive receptors destroyed in bone marrow.</li>
+            <li><strong>T cells:</strong> removed in thymus if they can't bind MHC or bind too strongly.</li>
+            <li><strong>AIRE:</strong> expresses peripheral tissue antigens in thymus so self-reactive T cells are found &amp; deleted. Mutations → multi-organ autoimmunity.</li>
+          </ul>
+        </td>
+        <td>After B/T cells enter circulation (catches escapees).
+          <ul>
+            <li><strong>Anergy:</strong> no co-stimulation → self-reactive T cell not activated.</li>
+            <li><strong>Ignorance:</strong> self-antigen too low to trigger; e.g. immune-privileged sites (CNS, eye).</li>
+            <li><strong>Tregs:</strong> suppress excessive immune activity to keep self-tolerance.</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <p><strong>Positive selection:</strong> can the cell detect antigen via BCR/TCR? If not → apoptosis.<br />
+    <strong>Negative selection:</strong> does it react against self? If yes → apoptosis.</p>
+    <p><strong>Affinity maturation:</strong> BCRs are modified in germinal centres so antibodies bind better after repeated exposure — but this can accidentally create self-reactive B cells.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">6</span> Hypothyroidism — causes &amp; symptoms</h2>
+    <h3>Causes</h3>
+    <ul>
+      <li>Autoimmune (Hashimoto's)</li>
+      <li>Radioactive iodine treatment</li>
+      <li>Antithyroid drugs</li>
+      <li><strong>Lithium</strong> (mental health) &amp; <strong>amiodarone</strong> (heart)</li>
+      <li>Excess iodine (cough medicines, kelp/seaweed)</li>
+      <li>Pituitary malfunction</li>
+      <li>Head/neck radiation (uncommon in UK)</li>
+      <li>Congenital hypothyroidism</li>
+    </ul>
+    <h3>Symptoms (think "everything slows down")</h3>
+    <div class="cols">
+      <ul>
+        <li>Fatigue / tiredness</li>
+        <li>Cold intolerance</li>
+        <li>Dry, coarse skin</li>
+        <li>Dry, thinning hair</li>
+        <li>Hoarse voice</li>
+        <li>Constipation</li>
+        <li>Muscle weakness, cramps, aches</li>
+        <li>Carpal tunnel (pins &amp; needles)</li>
+        <li>Heavier / longer periods</li>
+        <li>Low libido, fertility problems</li>
+        <li>Weight gain</li>
+        <li>Puffy face, eye bags</li>
+        <li>Slow speech / movement / thought</li>
+        <li>Low mood, memory &amp; concentration problems</li>
+        <li>Bradycardia</li>
+        <li>Raised blood pressure</li>
+        <li>Raised cholesterol</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">7</span> Drugs to remember</h2>
+    <table>
+      <tr><th>Drug</th><th>Used for</th><th>Thyroid link</th></tr>
+      <tr><td>Lithium</td><td>Some mental health problems</td><td>Can cause hypothyroidism</td></tr>
+      <tr><td>Amiodarone</td><td>Some heart problems</td><td>Can cause hypothyroidism</td></tr>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>Verify before exams:</strong> the source called "slightly raised blood pressure" <em>hypertension</em>, and its text extraction garbled parts of the Hashimoto's and AIRE/T-cell sequences. Check these against the original case notes.
+  </div>
+
+</main>
+
+<footer>
+  Generated from the Phase 1B CSI wiki · source: <code>wiki/sources/mina-shahnawaz-tiredness.md</code> · 2026-07-15.
+  All content traces to the "Mina Shahnawaz – Tiredness" CSI case.
+</footer>
+
+</body>
+</html>
