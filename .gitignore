@@ -12,3 +12,6 @@ docs/diagrams/*.svg
 
 # Immutable source documents — kept local, not published to the public site
 raw/
+
+# Anki decks — generated locally, not published
+anki/*.apkg

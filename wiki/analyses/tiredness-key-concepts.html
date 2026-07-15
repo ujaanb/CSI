@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tiredness — Key Concepts to Remember (Phase 1B CSI)</title>
+<title>Tiredness — Full Case Notes (Phase 1B CSI)</title>
 <style>
   :root {
     --bg: #f5f7fa;
@@ -15,21 +15,23 @@
     --line: #dde5ec;
     --warn-bg: #fff6e5;
     --warn-line: #f0c674;
+    --nav-h: 56px;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.55;
+    line-height: 1.6;
   }
   header {
     background: linear-gradient(135deg, #0b6e8f, #0a4b63);
     color: #fff;
-    padding: 2.4rem 1.5rem 1.8rem;
+    padding: 2.6rem 1.5rem 2rem;
   }
-  header .wrap { max-width: 900px; margin: 0 auto; }
+  header .wrap { max-width: 920px; margin: 0 auto; }
   header .kicker {
     text-transform: uppercase;
     letter-spacing: .12em;
@@ -37,60 +39,76 @@
     opacity: .85;
     margin: 0 0 .4rem;
   }
-  header h1 { margin: 0; font-size: 1.9rem; }
-  header p { margin: .6rem 0 0; opacity: .9; max-width: 60ch; }
-  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
-  .card {
+  header h1 { margin: 0; font-size: 2rem; }
+  header p { margin: .6rem 0 0; opacity: .92; max-width: 64ch; }
+  header a.back { color: #cdeaf3; font-size: .85rem; text-decoration: none; }
+  header a.back:hover { text-decoration: underline; }
+
+  nav.toc {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: .5rem 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav.toc .wrap { max-width: 920px; margin: 0 auto; display: flex; gap: .4rem; flex-wrap: nowrap; }
+  nav.toc a {
+    flex: none;
+    font-size: .82rem;
+    color: var(--accent);
+    text-decoration: none;
+    padding: .35rem .7rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+  }
+  nav.toc a:hover { background: #cfe8f0; }
+
+  main { max-width: 920px; margin: 0 auto; padding: 1.4rem 1.5rem 3rem; }
+
+  section { scroll-margin-top: calc(var(--nav-h) + 10px); }
+  section > h2 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin: 2rem 0 .3rem;
+    display: flex; align-items: center; gap: .55rem;
+  }
+  section > h2 .num {
+    display: inline-grid; place-items: center;
+    width: 1.8rem; height: 1.8rem;
+    background: var(--accent); color: #fff;
+    border-radius: 50%; font-size: .85rem; font-weight: 700; flex: none;
+  }
+  .section-lead { color: var(--muted); margin: 0 0 1rem; font-size: .95rem; }
+
+  .qa {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 1.3rem 1.5rem;
-    margin: 1.1rem 0;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: .8rem 0;
     box-shadow: 0 1px 3px rgba(16,42,67,.05);
   }
-  .card h2 {
-    margin: 0 0 .8rem;
-    font-size: 1.2rem;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-  }
-  .card h2 .num {
-    display: inline-grid;
-    place-items: center;
-    width: 1.7rem; height: 1.7rem;
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-radius: 50%;
-    font-size: .9rem;
-    font-weight: 700;
-    flex: none;
-  }
-  h3 { margin: 1rem 0 .4rem; font-size: 1rem; }
-  ul { margin: .3rem 0 .3rem; padding-left: 1.25rem; }
-  li { margin: .25rem 0; }
+  .qa .q { font-weight: 700; margin: 0 0 .5rem; }
+  .qa ul { margin: .3rem 0; padding-left: 1.25rem; }
+  .qa li { margin: .28rem 0; }
+  .qa p { margin: .4rem 0; }
+  .sub { color: var(--muted); font-size: .9rem; margin-left: .2rem; }
+
   .pill {
     display: inline-block;
     background: var(--accent-soft);
     color: var(--accent);
     border-radius: 999px;
-    padding: .15rem .6rem;
+    padding: .12rem .6rem;
     font-size: .78rem;
     font-weight: 600;
     margin: 0 .3rem .3rem 0;
   }
-  table { border-collapse: collapse; width: 100%; margin: .6rem 0; font-size: .95rem; }
-  th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
-  th { background: var(--accent-soft); color: var(--accent); }
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin-top: .4rem; }
-  .stat {
-    background: var(--accent-soft);
-    border-radius: 10px;
-    padding: .8rem 1rem;
-  }
-  .stat .big { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
-  .stat .lbl { font-size: .82rem; color: var(--muted); }
   .flow { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin: .5rem 0; }
   .flow .step {
     background: var(--accent-soft);
@@ -101,192 +119,400 @@
     font-weight: 600;
   }
   .flow .arrow { color: var(--accent); font-weight: 700; }
+  table { border-collapse: collapse; width: 100%; margin: .4rem 0; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent); }
+  .cols { columns: 2; column-gap: 1.6rem; }
+  @media (max-width: 560px) { .cols { columns: 1; } }
+
   .warn {
     background: var(--warn-bg);
     border: 1px solid var(--warn-line);
     border-radius: 10px;
-    padding: .8rem 1rem;
+    padding: .9rem 1.1rem;
     font-size: .9rem;
+    margin: 1.6rem 0 0;
   }
   .warn strong { color: #8a5a00; }
-  .cols { columns: 2; column-gap: 1.6rem; }
-  @media (max-width: 560px) { .cols { columns: 1; } }
-  footer { max-width: 900px; margin: 0 auto; padding: 1rem 1.5rem 3rem; color: var(--muted); font-size: .82rem; }
+  b, strong { color: var(--accent); }
+  .qa .q b, .qa .q strong { color: inherit; }
+  footer { max-width: 920px; margin: 0 auto; padding: 1rem 1.5rem 3rem; color: var(--muted); font-size: .82rem; }
   code { background: #eef2f6; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <p class="kicker">Phase 1B CSI · Case 1 revision</p>
-    <h1>Tiredness — Key Concepts to Remember</h1>
-    <p>A compact revision summary of the Mina Shahnawaz tiredness case: the clinical framing of fatigue through to thyroid endocrinology and autoimmune thyroiditis.</p>
+    <p class="kicker">Phase 1B CSI · Case 1 · full notes</p>
+    <h1>Tiredness — Mina Shahnawaz</h1>
+    <p>Complete case notes covering the Pre-Reading, Main Session, and Post-Session material, reorganised by topic for revision.</p>
+    <p style="margin-top:1rem"><a class="back" href="../../index.html">← Back to revision hub</a></p>
   </div>
 </header>
 
+<nav class="toc">
+  <div class="wrap">
+    <a href="#prereading">Pre-Reading</a>
+    <a href="#fatigue">Tiredness vs Fatigue</a>
+    <a href="#ddx">Differential Diagnosis</a>
+    <a href="#hpt">HPT Axis</a>
+    <a href="#hashimotos">Hashimoto's</a>
+    <a href="#tolerance">Immune Tolerance</a>
+    <a href="#hypothyroidism">Hypothyroidism</a>
+  </div>
+</nav>
+
 <main>
 
-  <div class="card">
-    <h2><span class="num">1</span> Tiredness vs fatigue</h2>
-    <ul>
-      <li><strong>Tiredness</strong> — a general symptom almost everyone experiences.</li>
-      <li><strong>Fatigue</strong> — the long-term effect of tiredness <em>not</em> resolved by sleep.</li>
-    </ul>
-    <h3>Fatigue in primary care — numbers to know</h3>
-    <div class="stat-grid">
-      <div class="stat"><div class="big">~7%</div><div class="lbl">of all GP consultations are due to fatigue</div></div>
-      <div class="stat"><div class="big">~66%</div><div class="lbl">of fatigue presentations get a diagnosis</div></div>
-      <div class="stat"><div class="big">&lt;10%</div><div class="lbl">have a cause detected on blood tests</div></div>
-    </div>
-    <p style="margin-top:.7rem"><strong>Takeaway:</strong> history (frequency &amp; severity, system review) matters more than early bloods — most causes are not found on blood tests.</p>
-  </div>
+  <!-- ============ PRE-READING ============ -->
+  <section id="prereading">
+    <h2><span class="num">1</span> Pre-Reading</h2>
+    <p class="section-lead">Background on the everyday causes and management of tiredness.</p>
 
-  <div class="card">
-    <h2><span class="num">2</span> Differential diagnosis of fatigue</h2>
-    <p>Ask about <strong>frequency and severity</strong>, use system-review questions, and order targeted tests (e.g. bloods) to rule conditions in/out.</p>
-    <h3>Candidate causes</h3>
-    <div class="cols">
+    <div class="qa">
+      <p class="q">Describe three common causes of tiredness.</p>
       <ul>
-        <li>Anaemia (incl. iron deficiency)</li>
+        <li>Not getting enough sleep, or finding it hard to get enough sleep (insomnia)</li>
+        <li>An unhealthy lifestyle (e.g. poor diet, lack of exercise)</li>
+        <li>Stress, depression and dealing with life challenges <span class="sub">(e.g. bereavement or looking after a new baby)</span></li>
+        <li>Hormonal changes <span class="sub">(e.g. during puberty, pregnancy or menopause)</span></li>
+        <li>Illnesses <span class="sub">(e.g. glandular fever and COVID-19)</span></li>
+        <li>Medical treatments/medicines <span class="sub">(e.g. chemotherapy)</span></li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Recall three conditions which may cause tiredness.</p>
+      <ul>
         <li>Sleep apnoea</li>
-        <li>Hypothyroidism</li>
-        <li>Coeliac disease</li>
-        <li>Chronic fatigue syndrome (ME/CFS)</li>
+        <li>Iron deficiency anaemia</li>
         <li>Diabetes</li>
-        <li>Glandular fever</li>
-        <li>Depression</li>
-        <li>Restless legs syndrome</li>
-        <li>Anxiety</li>
-        <li>Malignancy</li>
-        <li>Vitamin D deficiency</li>
-        <li>Heart failure</li>
-        <li>Infection</li>
-        <li>Lupus</li>
+        <li>Overactive thyroid (hyperthyroidism)</li>
+        <li>Myalgic encephalomyelitis / chronic fatigue syndrome (ME/CFS)</li>
       </ul>
     </div>
-    <h3>Non-pathological contributors</h3>
-    <p>
-      <span class="pill">Poor / insufficient sleep</span>
-      <span class="pill">Unhealthy lifestyle</span>
-      <span class="pill">Stress &amp; life events</span>
-      <span class="pill">Hormonal changes</span>
-      <span class="pill">Illness (e.g. COVID-19)</span>
-      <span class="pill">Treatments (e.g. chemo)</span>
-    </p>
-  </div>
 
-  <div class="card">
-    <h2><span class="num">3</span> HPT axis &amp; primary hypothyroidism</h2>
-    <h3>Normal feedback loop</h3>
-    <div class="flow">
-      <span class="step">Hypothalamus → TRH</span><span class="arrow">→</span>
-      <span class="step">Anterior pituitary → TSH</span><span class="arrow">→</span>
-      <span class="step">Thyroid → T3 / T4</span>
-    </div>
-    <p>T3 and T4 feed back on the pituitary and hypothalamus to <strong>switch off</strong> further TRH/TSH (negative feedback).</p>
-    <h3>Why primary hypothyroidism = high TSH, low T3/T4</h3>
-    <ul>
-      <li>The thyroid can't make enough T3/T4.</li>
-      <li>Low T3/T4 means the negative feedback signal is lost.</li>
-      <li>So the pituitary keeps pumping out TSH → <strong>TSH rises</strong> while <strong>T3/T4 stay low</strong>.</li>
-    </ul>
-    <p style="margin:.4rem 0 0"><em>Contrast:</em> a pituitary/hypothalamic (central) cause would give low TSH with low T3/T4. <span class="pill">not in source — background</span></p>
-  </div>
-
-  <div class="card">
-    <h2><span class="num">4</span> Hashimoto's disease (autoimmune thyroiditis)</h2>
-    <p>The immune system recognises <strong>thyroid peroxidase (TPO)</strong> as foreign and produces <strong>anti-TPO antibodies</strong> that attack the thyroid. (TPO normally makes MIT &amp; DIT to build T3/T4.)</p>
-    <h3>Immune sequence</h3>
-    <div class="flow">
-      <span class="step">APC presents TPO on MHC II</span><span class="arrow">→</span>
-      <span class="step">TCR on T cell binds</span><span class="arrow">→</span>
-      <span class="step">CD28–B7 co-stimulation activates T cell</span><span class="arrow">→</span>
-      <span class="step">T cell CD40L → CD40 on B cell</span><span class="arrow">→</span>
-      <span class="step">B cell makes anti-TPO antibody</span>
-    </div>
-    <p><strong>Result:</strong> autoimmune destruction of the thyroid → hypothyroidism. (B cells can also act as APCs.)</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="num">5</span> Immune tolerance (Phase 1A recap)</h2>
-    <table>
-      <tr><th>Central tolerance</th><th>Peripheral tolerance</th></tr>
-      <tr>
-        <td>Before B/T cells enter circulation.
-          <ul>
-            <li><strong>B cells:</strong> self-reactive receptors destroyed in bone marrow.</li>
-            <li><strong>T cells:</strong> removed in thymus if they can't bind MHC or bind too strongly.</li>
-            <li><strong>AIRE:</strong> expresses peripheral tissue antigens in thymus so self-reactive T cells are found &amp; deleted. Mutations → multi-organ autoimmunity.</li>
-          </ul>
-        </td>
-        <td>After B/T cells enter circulation (catches escapees).
-          <ul>
-            <li><strong>Anergy:</strong> no co-stimulation → self-reactive T cell not activated.</li>
-            <li><strong>Ignorance:</strong> self-antigen too low to trigger; e.g. immune-privileged sites (CNS, eye).</li>
-            <li><strong>Tregs:</strong> suppress excessive immune activity to keep self-tolerance.</li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <p><strong>Positive selection:</strong> can the cell detect antigen via BCR/TCR? If not → apoptosis.<br />
-    <strong>Negative selection:</strong> does it react against self? If yes → apoptosis.</p>
-    <p><strong>Affinity maturation:</strong> BCRs are modified in germinal centres so antibodies bind better after repeated exposure — but this can accidentally create self-reactive B cells.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="num">6</span> Hypothyroidism — causes &amp; symptoms</h2>
-    <h3>Causes</h3>
-    <ul>
-      <li>Autoimmune (Hashimoto's)</li>
-      <li>Radioactive iodine treatment</li>
-      <li>Antithyroid drugs</li>
-      <li><strong>Lithium</strong> (mental health) &amp; <strong>amiodarone</strong> (heart)</li>
-      <li>Excess iodine (cough medicines, kelp/seaweed)</li>
-      <li>Pituitary malfunction</li>
-      <li>Head/neck radiation (uncommon in UK)</li>
-      <li>Congenital hypothyroidism</li>
-    </ul>
-    <h3>Symptoms (think "everything slows down")</h3>
-    <div class="cols">
+    <div class="qa">
+      <p class="q">Recall ways to improve symptoms of tiredness/fatigue.</p>
       <ul>
-        <li>Fatigue / tiredness</li>
-        <li>Cold intolerance</li>
-        <li>Dry, coarse skin</li>
-        <li>Dry, thinning hair</li>
-        <li>Hoarse voice</li>
-        <li>Constipation</li>
-        <li>Muscle weakness, cramps, aches</li>
-        <li>Carpal tunnel (pins &amp; needles)</li>
-        <li>Heavier / longer periods</li>
-        <li>Low libido, fertility problems</li>
-        <li>Weight gain</li>
-        <li>Puffy face, eye bags</li>
-        <li>Slow speech / movement / thought</li>
-        <li>Low mood, memory &amp; concentration problems</li>
-        <li>Bradycardia</li>
-        <li>Raised blood pressure</li>
-        <li>Raised cholesterol</li>
+        <li>Have a healthy diet / exercise regularly</li>
+        <li>Sleep at the same time — aim for 6–9 hours</li>
+        <li>Relax a couple of hours before your sleep time</li>
+        <li>Create a relaxing sleeping environment (quiet, dark, warm)</li>
       </ul>
     </div>
-  </div>
 
-  <div class="card">
-    <h2><span class="num">7</span> Drugs to remember</h2>
-    <table>
-      <tr><th>Drug</th><th>Used for</th><th>Thyroid link</th></tr>
-      <tr><td>Lithium</td><td>Some mental health problems</td><td>Can cause hypothyroidism</td></tr>
-      <tr><td>Amiodarone</td><td>Some heart problems</td><td>Can cause hypothyroidism</td></tr>
-    </table>
-  </div>
+    <div class="qa">
+      <p class="q">Recall ways to alleviate symptoms of tiredness/fatigue.</p>
+      <ul>
+        <li>Do not smoke</li>
+        <li>Do not drink too much alcohol</li>
+        <li>Do not eat, have caffeine or exercise in the hours leading to sleep</li>
+        <li>Do not use smartphones or screens in the hour before sleep</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FATIGUE ============ -->
+  <section id="fatigue">
+    <h2><span class="num">2</span> Tiredness vs Fatigue &amp; Epidemiology</h2>
+    <p class="section-lead">Main Session — definitions and how common fatigue is in primary care.</p>
+
+    <div class="qa">
+      <p class="q">What is the difference between tiredness and fatigue?</p>
+      <ul>
+        <li><b>Tiredness</b> refers to a general symptom that almost all of us experience.</li>
+        <li><b>Fatigue</b> refers to the long-term effects of tiredness not being resolved by sleep.</li>
+      </ul>
+      <p><span class="pill">Note</span> Roughly 7% of all GP consultations are due to fatigue.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q">To the nearest 10%, what percentage of patients who present to a GP with fatigue have a diagnosis made?</p>
+      <p><b>~66%</b></p>
+    </div>
+
+    <div class="qa">
+      <p class="q">To the nearest 10%, what percentage of patients who present to a GP with fatigue have a condition that is detected on blood tests?</p>
+      <p><b>&lt;10%</b> — most causes are not found on blood tests, so history is key.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q">Recall seven conditions that could be possible causes of fatigue.</p>
+      <div class="cols">
+        <ul>
+          <li>Anaemia</li>
+          <li>Sleep apnoea</li>
+          <li>Underactive thyroid (hypothyroidism)</li>
+          <li>Coeliac disease</li>
+          <li>Chronic fatigue syndrome</li>
+          <li>Diabetes</li>
+          <li>Glandular fever</li>
+          <li>Depression</li>
+          <li>Restless legs syndrome</li>
+          <li>Anxiety</li>
+          <li>Malignancy</li>
+          <li>Vitamin D deficiency</li>
+          <li>Heart failure</li>
+          <li>Infection</li>
+          <li>Lupus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DDX ============ -->
+  <section id="ddx">
+    <h2><span class="num">3</span> Making a Differential Diagnosis</h2>
+    <p class="section-lead">How to narrow down the cause of fatigue/tiredness.</p>
+
+    <div class="qa">
+      <p class="q">Describe how we can make a differential diagnosis for symptoms of fatigue/tiredness.</p>
+      <ul>
+        <li>Asking questions on the <b>frequency and severity</b> of the symptoms is often very helpful.</li>
+        <li>This can help us understand just how much the patient is being affected.</li>
+        <li>We can also gain an understanding of what conditions to rule out by asking other system-related questions and conducting tests (e.g. bloods).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HPT ============ -->
+  <section id="hpt">
+    <h2><span class="num">4</span> The Thyroid HPT Axis</h2>
+    <p class="section-lead">Why primary hypothyroidism shows a characteristic hormone pattern.</p>
+
+    <div class="qa">
+      <p class="q">Explain why the following is observed in primary hypothyroidism: high TSH, low T3/T4.</p>
+      <div class="flow">
+        <span class="step">Hypothalamus → TRH</span><span class="arrow">→</span>
+        <span class="step">Anterior pituitary → TSH</span><span class="arrow">→</span>
+        <span class="step">Thyroid → T3 / T4</span>
+      </div>
+      <ul>
+        <li>Physiologically, TRH released from the hypothalamus causes TSH to be released from the anterior pituitary.</li>
+        <li>This causes T3 and T4 to be released from the thyroid, which both act on the anterior pituitary and hypothalamus to tell it to stop making more TRH and TSH (negative feedback).</li>
+        <li>In individuals with hypothyroidism, the TSH is released, however the T3 and T4 isn't released adequately.</li>
+        <li>This means there is a problem with the negative feedback mechanism — the T3 isn't telling the hypothalamus to stop making TRH/TSH, so these hormones are still secreted.</li>
+        <li>This causes <b>high TSH levels</b> to remain in the bloodstream and <b>low T3/T4</b>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HASHIMOTO'S ============ -->
+  <section id="hashimotos">
+    <h2><span class="num">5</span> Hashimoto's Disease</h2>
+    <p class="section-lead">The immune sequence that drives autoimmune thyroiditis.</p>
+
+    <div class="qa">
+      <p class="q">Describe the sequence of events in the immune system that take place in Hashimoto's disease.</p>
+      <ul>
+        <li>Physiologically in all healthy individuals, the <b>TPO antigen</b> is present in the thyroid gland.
+          <ul><li>TPO = <b>thyroid peroxidase</b>, the enzyme used to produce MIT and DIT in the production of T3/T4.</li></ul>
+        </li>
+        <li>In patients with Hashimoto's, the TPO antigen is recognised as foreign by the immune system and an immune response is elicited against it.</li>
+        <li>The <b>APC</b> presents MHC II (along with the TPO antigen) on its surface, which interacts with the <b>TCR</b> on T cells.
+          <ul><li>The co-stimulatory interaction between the T cell's <b>CD28</b> receptor and the <b>B7</b> ligand on the APC is also integral in activating the T cell.</li></ul>
+        </li>
+        <li>The T cell presents its <b>CD40L</b> on its surface, which can stimulate B cells when it interacts with the <b>CD40 receptor</b> on B cells.</li>
+        <li>B cells recognise the CD40L, and this induces the production of the <b>anti-TPO antibody</b> by the B cell, which goes and attacks the thyroid.</li>
+        <li>B cells can also act as APCs (alternative pathway).</li>
+      </ul>
+      <div class="flow" style="margin-top:.7rem">
+        <span class="step">TPO seen as foreign</span><span class="arrow">→</span>
+        <span class="step">APC: MHC II + TPO → TCR</span><span class="arrow">→</span>
+        <span class="step">CD28–B7 co-stim</span><span class="arrow">→</span>
+        <span class="step">T cell CD40L → CD40 on B cell</span><span class="arrow">→</span>
+        <span class="step">Anti-TPO antibody → thyroid</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOLERANCE ============ -->
+  <section id="tolerance">
+    <h2><span class="num">6</span> Immune Tolerance <span class="sub" style="font-size:.9rem">(Phase 1A recap)</span></h2>
+    <p class="section-lead">How the body normally avoids attacking itself — and how that can fail.</p>
+
+    <div class="qa">
+      <p class="q">What prevents immune cells from attacking host cells physiologically?</p>
+      <ul>
+        <li>The presence of <b>PAMPs</b> helps cells to differentiate between pathogens and self cells.</li>
+        <li>Ultimately, there are different mechanisms within central and peripheral tolerance (such as AIRE and affinity maturation) which ensure any self-attacking cells are destroyed before being released into the circulation.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">What is the difference between central and peripheral tolerance?</p>
+      <ul>
+        <li><b>Central tolerance</b> occurs <b>before</b> B and T cells have been secreted into circulation.</li>
+        <li><b>Peripheral tolerance</b> occurs <b>after</b> B and T cells have been secreted into circulation.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">What happens in central tolerance?</p>
+      <p>Cells that can be destructive against "self" / human antigens (and cause potential damage) are deleted and destroyed before entering into circulation.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how central tolerance works in B cell selection.</p>
+      <ul>
+        <li>Differentiated B cells in the bone marrow go around the bone marrow and patrol for self antigens.</li>
+        <li>If the bone marrow notices that a B cell receptor recognises a self antigen, then it destroys it before it is released into the bloodstream.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how central tolerance works in T cell selection.</p>
+      <ul>
+        <li>T cells that are unable to bind onto MHCs, or that bind to MHCs too strongly, are removed from the thymus and not released into circulation.</li>
+        <li><b>AIREs (Autoimmune Regulators)</b> are transcription factors in the thymus, used to express the genes of peripheral tissue antigens.</li>
+        <li>The expression of these genes allows us to see which T cells recognise the self-antigens and destroy them accordingly.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Why is central tolerance for B cells simpler than for T cells?</p>
+      <ul>
+        <li>B cells bind to antigens that are free in circulation, meaning that whether this happens in the bone marrow or not can be used to select between B cells.</li>
+        <li>T cells only bind to antigens in circulation on MHC molecules, so this makes things more difficult.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">How can mutations in AIRE affect hosts?</p>
+      <ul>
+        <li>AIRE will no longer be able to produce the self-antigens.</li>
+        <li>It can lead to a lack of adequate T cell selection, as the thymus no longer knows which T cells attack self-antigens.</li>
+        <li>This results in multi-organ autoimmunity.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">How is peripheral tolerance useful?</p>
+      <p>If any T or B cells that attack self antigens slip through central tolerance by accident, they can be destroyed via peripheral tolerance.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q">What is affinity maturation?</p>
+      <ul>
+        <li>A process where a B cell receptor can produce antibodies which bind onto a pathogen much better after repeated exposure.</li>
+        <li>It happens when the BCR is constantly modified to produce slightly different antibodies, and the lymph nodes select those that are best fit for the antigens.</li>
+        <li>It occurs in <b>germinal centres</b>.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">What is a consequence of affinity maturation?</p>
+      <p>The modification of the antibodies can lead to certain B cells recognising self antigens and attacking self cells.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how anergy works in peripheral tolerance.</p>
+      <ul>
+        <li>This is when the MHC on the surface of host cells doesn't contain the necessary stimulatory molecules to activate naive T cells.</li>
+        <li>This means these self-attacking T cells aren't activated and are less likely to be activated in future.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how ignorance works in peripheral tolerance.</p>
+      <ul>
+        <li>This is where the concentration of a self antigen is too low for T cells to be destroyed (i.e. they are ignored).</li>
+        <li>This happens in immunologically privileged areas (e.g. CNS, eye, brain), where the risk of autoimmunity is greater than the risk of actual infection.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how positive selection in B/T cell differentiation works.</p>
+      <ul>
+        <li>A process used to determine whether a B/T cell can detect antigens using its BCR/TCR (its primary function).</li>
+        <li>If it cannot, it has developed abnormally and these cells undergo apoptosis.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe how negative selection in B/T cell differentiation works.</p>
+      <ul>
+        <li>A process used to determine whether a B/T cell has BCRs/TCRs that react against self (host cell) antigens.</li>
+        <li>We don't want B/T cells that react against self antigens, so they undergo apoptosis.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">Describe the role of T-regulatory cells in self-tolerance.</p>
+      <ul>
+        <li>T regulatory cells (Tregs) are essential for maintaining immune homeostasis and tolerance, preventing autoimmune diseases, and regulating immune responses.</li>
+        <li>Their ability to suppress excessive immune activity is critical for self-tolerance, and they play significant roles in cancer, transplantation, and infectious diseases.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ HYPOTHYROIDISM ============ -->
+  <section id="hypothyroidism">
+    <h2><span class="num">7</span> Hypothyroidism <span class="sub" style="font-size:.9rem">(Post-Session)</span></h2>
+    <p class="section-lead">Causes, the drugs involved, and the symptom picture.</p>
+
+    <div class="qa">
+      <p class="q">Recall five causes of hypothyroidism.</p>
+      <ul>
+        <li>Autoimmune thyroid disease <span class="sub">(e.g. Hashimoto's)</span></li>
+        <li>Radioactive iodine treatment</li>
+        <li>Antithyroid drugs</li>
+        <li>Medicines such as lithium and amiodarone</li>
+        <li>Cough medicines with large amounts of iodine</li>
+        <li>Some foods taken in excess (e.g. kelp/seaweed)</li>
+        <li>Pituitary malfunction</li>
+        <li>Radiation for head and neck cancers (uncommon in the UK)</li>
+        <li>Congenital hypothyroidism</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q">What are lithium and amiodarone used for?</p>
+      <table>
+        <tr><th>Drug</th><th>Used to treat</th></tr>
+        <tr><td>Lithium</td><td>Some mental health problems</td></tr>
+        <tr><td>Amiodarone</td><td>Some heart problems</td></tr>
+      </table>
+    </div>
+
+    <div class="qa">
+      <p class="q">Recall seven symptoms of hypothyroidism.</p>
+      <div class="cols">
+        <ul>
+          <li>Fatigue and tiredness</li>
+          <li>Increased awareness of the cold (cold intolerance)</li>
+          <li>Dry and coarse skin</li>
+          <li>Dry and thinning hair</li>
+          <li>Hoarse or croaky voice</li>
+          <li>Constipation</li>
+          <li>Muscle weakness, cramps and aches</li>
+          <li>Pins and needles in the fingers and hands (carpal tunnel syndrome)</li>
+          <li>Heavier and longer periods</li>
+          <li>Fertility problems</li>
+          <li>Low libido</li>
+          <li>Weight gain</li>
+          <li>Puffy face and bags under the eyes</li>
+          <li>Slow speech, movements and thoughts</li>
+          <li>Low mood or depression</li>
+          <li>Memory problems</li>
+          <li>Difficulty in concentration</li>
+          <li>Slow heart beat (bradycardia)</li>
+          <li>Slightly raised blood pressure (hypertension)</li>
+          <li>Raised cholesterol</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <div class="warn">
-    <strong>Verify before exams:</strong> the source called "slightly raised blood pressure" <em>hypertension</em>, and its text extraction garbled parts of the Hashimoto's and AIRE/T-cell sequences. Check these against the original case notes.
+    <strong>Verify before exams:</strong> the source labels "slightly raised blood pressure" as <em>hypertension</em>, and its text extraction garbled parts of the Hashimoto's immune sequence and the AIRE/T-cell selection cards. These have been reconstructed faithfully but are worth checking against the original notes.
   </div>
 
 </main>
 
 <footer>
-  Generated from the Phase 1B CSI wiki · source: <code>wiki/sources/mina-shahnawaz-tiredness.md</code> · 2026-07-15.
+  Full notes generated from the Phase 1B CSI wiki · source: <code>wiki/sources/mina-shahnawaz-tiredness.md</code> · updated 2026-07-15.
   All content traces to the "Mina Shahnawaz – Tiredness" CSI case.
 </footer>
 
