@@ -28,3 +28,9 @@ Allowed operations:
 - Created `wiki/overview.md` synthesis page and updated `wiki/index.md`.
 - Decode confidence medium: PDF text extraction garbled some sentences (Hashimoto's immune sequence, AIRE/T cell selection); flagged for verification in affected pages' Open questions.
 - Files touched: `wiki/sources/mina-shahnawaz-tiredness.md`, `wiki/concepts/*` (5), `wiki/entities/*` (6), `wiki/overview.md`, `wiki/index.md`, `wiki/log.md`.
+
+## [2026-07-15] meta | Move HTML outputs into Outcomes/
+- Created `Outcomes/` for all CSI HTML revision/site pages.
+- Moved the revision hub and tiredness full-notes page into `Outcomes/`; left a root `index.html` redirect for GitHub Pages.
+- Updated relative links and the README structure note.
+- Files touched: `Outcomes/index.html`, `Outcomes/tiredness-key-concepts.html`, `index.html`, `README.md`, `wiki/log.md`.

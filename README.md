@@ -16,6 +16,7 @@ A personal study wiki for the Phase 1B CSI medicine course at Imperial College L
 .
 ├── AGENTS.md           # operating schema and maintenance rules
 ├── README.md           # project introduction
+├── Outcomes/           # HTML revision pages for the live site
 ├── docs/
 │   └── LLM-WIKI.md     # reference description of the wiki pattern
 ├── raw/                # immutable source documents
@@ -24,4 +25,4 @@ A personal study wiki for the Phase 1B CSI medicine course at Imperial College L
     └── log.md          # append-only operation history
 ```
 
-The domain and maintenance contract are defined in [`AGENTS.md`](./AGENTS.md). Start navigation from [`wiki/index.md`](./wiki/index.md).
+The domain and maintenance contract are defined in [`AGENTS.md`](./AGENTS.md). Start navigation from [`wiki/index.md`](./wiki/index.md). Browse the revision site pages under [`Outcomes/`](./Outcomes/).
