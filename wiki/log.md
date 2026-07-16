@@ -34,3 +34,11 @@ Allowed operations:
 - Moved the revision hub and tiredness full-notes page into `Outcomes/`; left a root `index.html` redirect for GitHub Pages.
 - Updated relative links and the README structure note.
 - Files touched: `Outcomes/index.html`, `Outcomes/tiredness-key-concepts.html`, `index.html`, `README.md`, `wiki/log.md`.
+
+## [2026-07-16] meta | Build revision-hub pages for cases 2–8
+- Added seven full-notes HTML pages to `Outcomes/` from the newly provided PDFs (cases 2–8): Bill – Emergency, Amy Carter – Low Mood, Phillip Craven – Breathlessness, Anna Taylor – Abdominal Pain, Paul Bennett – Back Pain, Lucy Allen – Diarrhoea, Lucy Benjamin – Complications of Crohn's.
+- Extracted a shared `Outcomes/style.css` (sticky topic nav, Q&A cards, tables, flow diagrams) used by all new case pages.
+- Updated `Outcomes/index.html` to list all 8 cases and removed the "more cases coming" placeholder.
+- Scope note: these are revision-hub HTML outputs only. The underlying wiki source/entity/concept ingest for cases 2–8 (per §5.1) is not yet done and remains pending.
+- Decode confidence medium: PDF text extraction reordered phrases in all seven Notion exports; a fidelity caveat is included on each page.
+- Files touched: `Outcomes/style.css`, `Outcomes/bill-emergency.html`, `Outcomes/amy-carter-low-mood.html`, `Outcomes/phillip-craven-breathlessness.html`, `Outcomes/anna-taylor-abdominal-pain.html`, `Outcomes/paul-bennett-back-pain.html`, `Outcomes/lucy-allen-diarrhoea.html`, `Outcomes/lucy-benjamin-crohns-complications.html`, `Outcomes/index.html`, `wiki/log.md`.
