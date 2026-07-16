@@ -42,3 +42,10 @@ Allowed operations:
 - Scope note: these are revision-hub HTML outputs only. The underlying wiki source/entity/concept ingest for cases 2–8 (per §5.1) is not yet done and remains pending.
 - Decode confidence medium: PDF text extraction reordered phrases in all seven Notion exports; a fidelity caveat is included on each page.
 - Files touched: `Outcomes/style.css`, `Outcomes/bill-emergency.html`, `Outcomes/amy-carter-low-mood.html`, `Outcomes/phillip-craven-breathlessness.html`, `Outcomes/anna-taylor-abdominal-pain.html`, `Outcomes/paul-bennett-back-pain.html`, `Outcomes/lucy-allen-diarrhoea.html`, `Outcomes/lucy-benjamin-crohns-complications.html`, `Outcomes/index.html`, `wiki/log.md`.
+
+## [2026-07-16] meta | Interactive Practice Questions page
+- Added `Outcomes/practice-questions.html` and `Outcomes/practice-questions.js`: choose case topic(s), set question count, generate an on-page MCQ quiz.
+- Question bank emphasises inference, application, and clinical reasoning rather than pure recall (~100 items across all 8 cases).
+- Recent-question avoidance via browser `localStorage` (recycles only after the fresh pool is used).
+- Linked from the revision hub under a new Practice section.
+- Files touched: `Outcomes/practice-questions.html`, `Outcomes/practice-questions.js`, `Outcomes/index.html`, `wiki/log.md`.
